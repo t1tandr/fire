@@ -1,0 +1,351 @@
+// main
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+// * VARS * //
+
+$red: #F00002;
+$black: #292734;
+$yellow: #FFC600;
+
+// * CONTAINER * //
+
+.container{
+    width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+// HEADER
+
+.header{
+    width: 100%;
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: space-between;
+
+    &-left{
+        display: block;
+        margin-right: 60px;
+        align-items: center;
+        width: 25%;
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &-right{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+
+
+        &-up{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #F5F5F5;
+            // padding-bottom: 18px;
+
+            &-phone{
+                display: flex;
+
+                & img{
+                    width: 15px;
+                    height: 20px;
+
+                }
+                &-text{
+                    margin-left: 5px;
+                    font-weight: 500;
+                    color: $red;
+                }
+            }
+            &-slogan{
+
+                &-text{
+                    color: $black;
+                    font-weight: 700;
+                    font-size: 16px;
+                }
+            }
+            &-lang{
+                display: flex;
+
+                &-item{
+
+                    font-size: 16px;
+                    font-weight: 700;
+                    &:first-child{
+                        margin-right: 15px;
+                    }
+
+                    &-active{
+                        position: relative;
+                        color: $red;
+                        font-weight: 700;
+                        &::after{
+                            content: "";
+                            display: block;
+                            width: 25px;
+                            height: 2px;
+                            border-radius: 5px 5px 0 0;
+                            background-color: $red;
+                            margin-top: 8px;
+                        }
+                    }
+                }
+            }
+        }
+        &-down{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 27px;
+            align-items: center;
+
+            &-sertificate{
+
+                &-text{
+                    font-weight: 700;
+                    color: $red;
+                }
+            }
+            &-nav{
+                display: flex;
+                // justify-content: space-between;
+                &-item{
+                    text-decoration: none;
+                    color: $black;
+                    font-weight: 500;
+                    margin-right: 25px;
+                    position: relative;
+                    padding-bottom: 5px;
+
+                    &::after{
+                        content: "";
+                        display: block;
+                        height: 1px;
+                        width: 100%;
+                        // margin-top: 5px;
+                        position: absolute;
+                        bottom: 0px;
+                        background-color: $black;
+                        transform: translateX(-80px);
+                        opacity: 0;
+                    }
+
+                    &:hover{
+                        &::after{
+                            transform: translateX(0);
+                            opacity: 1;
+                            transition-duration: .8s;
+                        }
+                    }
+
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+.block1{
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &-bcg{
+        background: url('../img/baner.jpg') center no-repeat;
+        height: 450px;
+    }
+    &-inner{
+        width: 40%;
+        height: 100%;
+        float: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &-header{
+            font-family: 'Comfortaa', cursive;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 33px;
+            margin-bottom: 35px;
+        }
+        &-describe{
+            font-family: 'Comfortaa', cursive;
+            font-weight: 300;
+            font-size: 30px;
+            line-height: 150%;
+        }
+    }
+}
+
+// font-family: 'Comfortaa', cursive;
+
+// offers
+
+.offer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    &-item{
+        text-align: center;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 430px;
+        padding: 20px 70px;
+        background-color: #fff;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+        margin-bottom: 30px;
+
+        &:hover{
+            background: $black;
+            transition-duration: .6s;
+            transform: translateY(-10px);
+
+            .offer-item-header{
+                color: white;
+                opacity: 1;
+                transition-duration: .6s;
+            }
+            .offer-item-describe{
+                color: white;
+                opacity: .6;
+                transition-duration: .6s;
+            }
+            .offer-item-button{
+                background-color: $yellow;
+                transition-duration: .6s;
+                color: $black;
+            }
+        }
+
+        & img{
+
+        }
+        &-header{
+            font-weight: 700;
+            font-size: 18px;
+        }
+        &-describe{
+            font-size: 13px;
+            line-height: 150%;
+            color: #505050;
+        }
+        &-button{
+            width: 245px;
+            padding: 15px 60px;
+            background-color: $black;
+            font-weight: bold;
+            font-size: 12px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+    }
+}
+.h57{
+    height: 57px;
+}
+.h70{
+    height: 70px;
+}
+.footer{
+    width: 100%;
+    height: 100%;
+    padding: 25px 0;
+    background-color: $black;
+    color: white;
+
+    &-inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        &-img{
+            width: 25%;
+
+            & img{
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &-soc{
+            display: flex;
+
+            & img{
+                width: 35px;
+                height: 35px;
+
+                &:first-child{
+                    margin-right: 30px;
+                }
+            }
+        }
+        &-nav{
+            display: flex;
+            flex-direction: column;
+
+
+            &-item{
+                text-decoration: none;
+                color: white;
+                margin-bottom: 12px;
+                font-size: 14px;
+                font-weight: 300;
+                &:hover{
+                    text-decoration: underline;
+                }
+
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &-contact{
+            display: flex;
+            flex-direction: column;
+
+            &-item{
+                display: flex;
+                height: 20px;
+                align-items: center;
+                margin-bottom: 15px;
+
+                &:last-child{
+                    margin-bottom: 0;
+                }
+
+                &-text{
+                    font-weight: 700;
+                    color: $yellow;
+                    font-size: 12px;
+                    margin-left: 16px;
+                }
+            }
+        }
+    }
+}
